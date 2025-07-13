@@ -1,5 +1,5 @@
 // @todo: Функция создания карточки
-function createCard(item, cardTemplate, clickLike, initCard, popupTypeImage, openModal) {
+export function createCard(item, cardTemplate, clickLike, initCard, popupTypeImage, openModal) {
   const cardItem = cardTemplate.cloneNode(true);
   const cardImage = cardItem.querySelector(".card__image");
   const cardTitle = cardItem.querySelector(".card__title");
@@ -20,19 +20,6 @@ function createCard(item, cardTemplate, clickLike, initCard, popupTypeImage, ope
 function deleteCard(event) {
   const cardItem = event.target.closest(".places__item");
   cardItem.remove();
-}
-
-// @todo: Вывести карточки на страницу
-export function renderCard(initialCards, cardTemplate, cardList, clickLike, initCard, popupTypeImage, openModal) {
-  initialCards.forEach((cardInfo) => {
-    const cardItem = createCard(cardInfo, cardTemplate, clickLike, initCard, popupTypeImage, openModal);
-    cardList.appendChild(cardItem);
-  });
-}
-
-export function addCardToContainer(cardData, cardTemplate, cardList, clickLike, initCard, popupTypeImage, openModal) {
-  const cardElement = createCard(cardData, cardTemplate, clickLike, initCard, popupTypeImage, openModal);
-  cardList.prepend(cardElement);
 }
 
 export function clickLike(likeButton){

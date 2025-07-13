@@ -1,8 +1,9 @@
+const formElement = document.forms['edit-profile'];
+const nameInput = formElement.elements.name;
+const jobInput = formElement.elements.description;
+
 export function initPopupEdit(profileTitle, profileDescription, closeModal, popup){
-  const formElement = document.forms['edit-profile'];
-  const nameInput = formElement.elements.name;
   nameInput.value = profileTitle.textContent;
-  const jobInput = formElement.elements.description;
   jobInput.value = profileDescription.textContent;
 
   function handleFormSubmit(evt) {
@@ -17,5 +18,11 @@ export function initPopupEdit(profileTitle, profileDescription, closeModal, popu
   }
 
   formElement.addEventListener('submit', handleFormSubmit);
+}
+
+export function initInput(profileTitle, profileDescription, openModal, popup){
+  nameInput.value = profileTitle.textContent;
+  jobInput.value = profileDescription.textContent;
+  openModal(popup);
 }
 
