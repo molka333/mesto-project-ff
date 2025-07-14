@@ -17,9 +17,10 @@ const popupTypeEdit = page.querySelector(".popup_type_edit");
 setupPopupCloseListeners(popupTypeEdit);
 const profileTitle = page.querySelector(".profile__title");
 const profileDescription = page.querySelector(".profile__description");
-initPopupEdit(profileTitle, profileDescription, closeModal, popupTypeEdit);
+const formElement = document.forms['edit-profile'];
+initPopupEdit(profileTitle, profileDescription, closeModal, popupTypeEdit, formElement);
 const profileEditButton = page.querySelector(".profile__edit-button");
-profileEditButton.addEventListener('click', () => initInput(profileTitle, profileDescription, openModal, popupTypeEdit));
+profileEditButton.addEventListener('click', () => initInput(profileTitle, profileDescription, openModal, popupTypeEdit, formElement));
 
 
 const popupTypeImage = page.querySelector(".popup_type_image");
