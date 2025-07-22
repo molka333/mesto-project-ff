@@ -10,6 +10,7 @@ export function initPopupNewCard(addCardToContainer, cardTemplate, closeModal, p
           name:nameInput.value,
           link:linkInput.value,
         };
+      button.textContent = "Сохранение...";
       postCurds({body: сard}, button)
         .then(res => {
         addCardToContainer(res, cardTemplate, clickLike, initCard, popupTypeImage, openModal, putLike, deleteLike, deleteCurds, user.data);

@@ -24,8 +24,7 @@ export const getUser = () => {
     })
 }
 
-export const pathUser = (data, button) => {
-  button.textContent = "Сохранение...";
+export const pathUser = (data) => {
   return fetch(`${config.baseUrl}/users/me`, {
     method: 'PATCH',
     headers: config.headers,
@@ -45,8 +44,7 @@ export const pathUser = (data, button) => {
     })
 }
 
-export const pathUserAvatar = (data, button) => {
-  button.textContent = "Сохранение...";
+export const pathUserAvatar = (data) => {
   return fetch(`${config.baseUrl}/users/me/avatar`, {
     method: 'PATCH',
     headers: config.headers,
@@ -84,8 +82,7 @@ export const getCurds = () => {
     })
 }
 
-export const postCurds = (data, button) => {
-  button.textContent = "Сохранение...";
+export const postCurds = (data) => {
   return fetch(`${config.baseUrl}/cards`, {
     method: 'POST',
     headers: config.headers,

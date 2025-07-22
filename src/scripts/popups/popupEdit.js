@@ -19,6 +19,7 @@ export function initPopupEdit(profileTitle, profileDescription, closeModal, popu
         about: jobInputValue
       }
     };
+    button.textContent = "Сохранение...";
     pathUser(userData, button)
       .then(res => {
         dom.data = res;
