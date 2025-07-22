@@ -8,6 +8,33 @@
   background-position: center;
   margin: 0 29px 0 0;
   background-image: url('../../../images/avatar.jpg');
+  position: relative;
+}
+
+.profile__image:hover::before {
+  content: "";
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  margin: 0 29px 0 0;
+  background-color: black;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.profile__image:hover::after {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../../../images/avatar-edit.svg');
+  position: absolute;
+  top: 47px;
+  left: 47px;
 }
 
 @media screen and (max-width: 740px) {
