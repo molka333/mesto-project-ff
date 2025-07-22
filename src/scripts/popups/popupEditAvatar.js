@@ -7,7 +7,7 @@ export function initPopupEditAvatar(closeModal, popup, pathUserAvatar, user){
     evt.preventDefault();
     const avatarValue = avatar.value;
 
-    button.textContent = "Сохранение...";
+    button.textContent = "Сохранение..."; 
     pathUserAvatar({avatar: avatarValue}, button)
       .then(res => {
         user.avatar.style.backgroundImage = `url(${avatarValue})`;
