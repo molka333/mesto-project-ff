@@ -1,16 +1,10 @@
   export function openModal(popup) {
-    popup.classList.add('popup_is-animated');
-    setTimeout(() => {
-      popup.classList.add('popup_is-opened');
-    }, 10);
+    popup.classList.add('popup_is-opened');
     document.addEventListener('keydown', handleEscapeKey);
   }
 
   export function closeModal(popup) {
     popup.classList.remove('popup_is-opened');
-    setTimeout(() => {
-      popup.classList.remove('popup_is-animated');
-    }, 600);
     document.removeEventListener('keydown', handleEscapeKey);
   }
 
@@ -24,6 +18,7 @@
   }
 
   export function setupPopupCloseListeners(popup) {
+    popup.classList.add('popup_is-animated');
     popup.addEventListener('mousedown', (evt) => {
       if (evt.target === popup) {
         closeModal(popup);

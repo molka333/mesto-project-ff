@@ -6,21 +6,19 @@ const config = {
   }
 }
 
+const getResponseData = (res) => {
+    if (!res.ok) {
+        return Promise.reject(`Ошибка: ${res.status}`); 
+    }
+    return res.json();
+}
+
 export const getUser = () => {
   return fetch(`${config.baseUrl}/users/me`, {
     headers: config.headers
   })
     .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    })
-    .then(res => {
-      return res;
-    })
-    .catch((err) => {
-      console.log(err);
+      return getResponseData(res);
     })
 }
 
@@ -31,16 +29,7 @@ export const pathUser = (data) => {
     body: JSON.stringify(data.body)
   })
     .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    })
-    .then(res => {
-      return res;
-    })
-    .catch((err) => {
-      console.log(err);
+      return getResponseData(res);
     })
 }
 
@@ -51,16 +40,7 @@ export const pathUserAvatar = (data) => {
     body: JSON.stringify(data)
   })
     .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    })
-    .then(res => {
-      return res;
-    })
-    .catch((err) => {
-      console.log(err);
+      return getResponseData(res);
     })
 }
 
@@ -69,16 +49,7 @@ export const getCurds = () => {
     headers: config.headers
   })
     .then(res => {
-      if (res.ok) {
-        return res.json();
-      } 
-      return Promise.reject(`Ошибка: ${res.status}`);
-    })
-    .then(res => {
-      return res;
-    })
-    .catch((err) => {
-      console.log(err);
+      return getResponseData(res);
     })
 }
 
@@ -89,16 +60,7 @@ export const postCurds = (data) => {
     body: JSON.stringify(data.body)
   })
     .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    })
-    .then(res => {
-      return res;
-    })
-    .catch((err) => {
-      console.log(err);
+      return getResponseData(res);
     })
 }
 
@@ -108,16 +70,7 @@ export const deleteCurds = (id) => {
     headers: config.headers,
   })
     .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    })
-    .then(res => {  
-      return res;
-    })
-    .catch((err) => {
-      console.log(err);
+      return getResponseData(res);
     })
 }
 
@@ -127,16 +80,7 @@ export const putLike = (id) => {
     headers: config.headers,
   })
     .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    })
-    .then(res => {
-      return res;
-    })
-    .catch((err) => {
-      console.log(err);
+      return getResponseData(res);
     })
 }
 
@@ -146,15 +90,6 @@ export const deleteLike = (id) => {
     headers: config.headers,
   })
     .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    })
-    .then(res => {
-      return res;
-    })
-    .catch((err) => {
-      console.log(err);
+      return getResponseData(res);
     })
 }
