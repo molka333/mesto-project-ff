@@ -96,9 +96,9 @@ function handleFormSubmitEdit(evt) {
 }
 formElementEditProfile.addEventListener('submit', handleFormSubmitEdit);
 profileEditButton.addEventListener('click', () => {
-  resetFormValidation(popupTypeEdit, data);
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileDescription.textContent;
+  resetFormValidation(popupTypeEdit, data);
   openModal(popupTypeEdit);
 });
 
